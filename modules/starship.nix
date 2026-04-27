@@ -1,0 +1,34 @@
+{
+  config,
+  pkgs,
+  ...
+}: {
+  # starship
+  programs.starship = {
+    enable = true;
+    settings = {
+      add_newline = true;
+      command_timeout = 1000;
+
+      directory = {
+        truncate_to_repo = false;
+      };
+
+      git_branch = {
+        format = "[$symbol$branch(:$remote_branch)]($style) ";
+      };
+
+      hostname = {
+        format = "[$hostname:]($style)";
+        ssh_only = false;
+        style = "bold cyan";
+      };
+
+      username = {
+        format = "[$user##]($style)";
+        show_always = true;
+        style_user = "bold cyan";
+      };
+    };
+  };
+}

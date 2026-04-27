@@ -1,0 +1,153 @@
+{
+  config,
+  pkgs,
+  ...
+}: {
+  programs.fastfetch = {
+    enable = true;
+
+    settings = {
+      display = {
+        disableLinewrap = false;
+        separator = "";
+        key.width = 14;
+        temp = {};
+        bar = {
+          width = 12;
+          char = {
+            total = "";
+            elapsed = "";
+          };
+          border = {
+            left = "";
+            leftElapsed = "";
+            right = "";
+            rightElapsed = "";
+          };
+          color.total = null;
+        };
+        percent.type = ["bar" "bar-monochrome"];
+      };
+
+      modules = [
+        {
+          type = "title";
+          color = {
+            user = "red";
+            at = "red";
+            host = "red";
+          };
+        }
+        "break"
+        {
+          type = "host";
+          key = "{icon} host";
+          keyColor = "blue";
+          format = "{name}";
+        }
+        {
+          type = "os";
+          key = "{icon} os";
+          keyColor = "blue";
+          format = "{name} {codename} {version} ({arch})";
+        }
+        {
+          type = "kernel";
+          key = "{icon} kernel";
+          keyColor = "blue";
+          format = "{sysname} {release}";
+        }
+        {
+          type = "wm";
+          key = "{icon} wm";
+          keyColor = "blue";
+          format = "{pretty-name}";
+        }
+        {
+          type = "font";
+          key = "{icon} sysfont";
+          keyColor = "blue";
+          format = "{combined}";
+        }
+        {
+          type = "packages";
+          key = "{icon} packages";
+          keyColor = "blue";
+        }
+        {
+          type = "uptime";
+          key = "{icon} uptime";
+          keyColor = "blue";
+          format = "{formatted}";
+        }
+        {
+          type = "terminal";
+          key = "{icon} term";
+          keyColor = "magenta";
+          format = "{pretty-name} {version}";
+        }
+        {
+          type = "terminalFont";
+          key = " termfont";
+          keyColor = "magenta";
+          format = "{combined}";
+        }
+        {
+          type = "shell";
+          key = "{icon} shell";
+          keyColor = "magenta";
+          format = "{pretty-name} {version}";
+        }
+        {
+          type = "editor";
+          key = "{icon} editor";
+          keyColor = "magenta";
+          format = "{name} {version}";
+        }
+        {
+          type = "cpu";
+          key = "{icon} cpu";
+          keyColor = "cyan";
+          showPeCoreCount = true;
+          temp = true;
+          format = "{name} ({march}, {core-types} cores) @ {freq-max}";
+        }
+        {
+          type = "gpu";
+          key = "{icon} gpu";
+          keyColor = "cyan";
+          temp = true;
+          format = "{name} [{type}] ({platform-api}, {core-count} cores) @ {frequency}";
+        }
+        {
+          type = "memory";
+          key = "{icon} mem";
+          keyColor = "cyan";
+          format = "{percentage-bar} {used} / {total}";
+        }
+        {
+          type = "disk";
+          key = "󰉉 disk";
+          keyColor = "cyan";
+          folders = "/";
+          format = "{size-percentage-bar} {size-used} / {size-total} ({filesystem})";
+        }
+        {
+          type = "localip";
+          key = "{icon} network";
+          keyColor = "cyan";
+          showIpv4 = true;
+          showSpeed = true;
+          format = "{ipv4} ({ifname}) [{speed}]";
+        }
+        "break"
+        {
+          type = "custom";
+          format = "{#30}󰊠  {#31}󰊠  {#32}󰊠  {#33}󰊠  {#34}󰊠  {#35}󰊠  {#36}󰊠  {#37}󰊠";
+        }
+        "break"
+        "break"
+      ];
+    };
+  };
+}
