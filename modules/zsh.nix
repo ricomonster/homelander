@@ -12,6 +12,7 @@
       ls = "eza --icons";
       ll = "eza -l --icons";
       la = "eza -la --icons";
+      yay = "yay --batchinstall --sudoloop";
     };
 
     plugins = [
@@ -47,6 +48,9 @@
       elif command -v neofetch > /dev/null 2>&1; then
         DISPLAY="" neofetch
       fi
+
+      # Cargo
+      export PATH="$HOME/.cargo/bin:$PATH"
 
       # Secrets (not managed by Nix, safe to commit home.nix)
       [ -f ~/.secrets ] && source ~/.secrets

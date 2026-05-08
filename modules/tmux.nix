@@ -25,6 +25,8 @@
           set -g @tokyo-night-tmux_window_id_style digital
           set -g @tokyo-night-tmux_pane_id_style hsquare
           set -g @tokyo-night-tmux_zoom_id_style dsquare
+          set -g @tokyo-night-tmux_show_path 0
+          set -g @tokyo-night-tmux_session_name 0
         '';
       }
     ];
