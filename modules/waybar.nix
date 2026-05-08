@@ -12,7 +12,7 @@
 
     "custom/memory" = {
       exec = "${config.xdg.configHome}/waybar/scripts/memory.sh";
-      interval = 1;
+      interval = 10;
       return-type = "json";
     };
 
@@ -70,7 +70,7 @@ in {
           position = "top";
           margin-top = 5;
           modules-left = ["custom/arch" "custom/cpu" "custom/memory"];
-          modules-right = ["network" "clock"];
+          modules-right = ["custom/volume" "network" "clock"];
         })
       (commonModules
         // {
