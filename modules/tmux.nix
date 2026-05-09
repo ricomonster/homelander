@@ -61,4 +61,10 @@
       set -g pane-active-border-style "fg=#1A1B26"
     '';
   };
+
+  # Tmuxifier layouts
+  home.file.".tmux-layouts" = {
+    source = ./tmux-layouts;
+    recursive = true;
+  };
 }

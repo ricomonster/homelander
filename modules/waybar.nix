@@ -71,7 +71,7 @@
     clock = {
       tooltip-format = "{calendar}";
       format-alt = "  {:%a, %d %b %Y}";
-      format = "[   {:%I:%M %p} ]";
+      format = "[   {:%A %B %d %I:%M %p} ]";
     };
 
     network = {
@@ -89,6 +89,7 @@
     };
 
     "hyprland/window" = {
+      format = "{initialTitle}";
       max-length = 50;
     };
   };
@@ -194,6 +195,7 @@ in {
          /* === Default Module Container Styling ==================================== */
 
          #custom-arch,
+         #window,
          #bluetooth,
          #custom-bluetooth,
          #custom-volume,
@@ -210,6 +212,12 @@ in {
            background-color: #16161e;
            border: 2px solid #7aa2f7;
            border-radius: 2px;
+         }
+
+         #window {
+           font-weight: bold;
+           font-size: 12px;
+           color: #ff9e64;
          }
 
 
@@ -250,15 +258,6 @@ in {
          }
 
 
-         /* === Asus Profile ======================================================== */
-
-         #custom-asus-profile {
-           font-weight: bold;
-           font-size: 12px;
-           color: #e0af68;
-         }
-
-
          /* === VPN ================================================================= */
 
          #custom-vpn {
@@ -274,29 +273,6 @@ in {
            border-radius: 2px;
            font-weight: normal;
          }
-
-         /* 🔴 Critical */
-         #custom-cpu .battery-critical {
-           background-color: #f7768e;
-           color: #1a1b26;
-           padding: 2px 6px;
-           border-radius: 6px;
-           font-weight: bold;
-         }
-
-         /* 🟠 Warning */
-         #custom-cpu .battery-warning {
-           background-color: #ff9e64;
-           color: #1a1b26;
-           padding: 2px 6px;
-           border-radius: 6px;
-         }
-
-         /* 🟢 Normal */
-         #custom-cpu .battery-normal {
-           color: #9ece6a;
-         }
-
 
          /* === Brightness ========================================================== */
 
@@ -332,7 +308,7 @@ in {
 
          /* === Hover Effects ======================================================= */
 
-         #custom-microphone:hover,
+         #custom-arch:hover,
          #custom-volume:hover,
          #pulseaudio:hover,
          #network:hover,
