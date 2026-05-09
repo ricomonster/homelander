@@ -10,5 +10,6 @@ configuration {
 }
 
 /* Import active theme */
-@theme "~/.config/rofi/themes/dionysus.rasi"
+// @theme "~/.config/rofi/themes/dionysus.rasi"
+@theme "~/.config/rofi/themes/tokyonight_big1.rasi"
 

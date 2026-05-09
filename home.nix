@@ -12,6 +12,7 @@
   };
 
   imports = [
+    ./modules/btop.nix
     ./modules/fastfetch.nix
     ./modules/ghostty.nix
     ./modules/git.nix

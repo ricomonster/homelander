@@ -4,7 +4,10 @@
   ...
 }: {
   home.packages = with pkgs; [
+    # cli tools
     bc
+    jq
+
     # dev stuff
     eza
     fastfetch
@@ -12,6 +15,7 @@
     tmuxifier
     # hyprland/wayland stuff
     rofi
+
     # apps
     qbittorrent
 

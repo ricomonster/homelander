@@ -18,11 +18,11 @@ icon="\uf1c0"
 
 # Color thresholds
 if [ "$usage" -gt 80 ]; then
-    fg="#bf616a"  # red
+  fg="#f7768e"  # red
 elif [ "$usage" -gt 60 ]; then
-    fg="#fab387"  # orange
+  fg="#ff9e64"  # orange
 else
-    fg="#56b6c2"  # cyan
+  fg="#7dcfff"  # cyan
 fi
 
 tooltip="$usage%"
