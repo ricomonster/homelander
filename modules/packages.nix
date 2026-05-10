@@ -7,6 +7,7 @@
     # cli tools
     bc
     jq
+    playerctl
 
     # dev stuff
     eza

@@ -8,7 +8,7 @@ cpu=$(top -bn1 | grep "Cpu(s)" | awk '{print $2}' | cut -d'%' -f1)
 int_cpu=$(echo "$cpu" | cut -d'.' -f1)
 
 # ASCII
-filled=$((int_cpu / 10))
+filled=$(( (int_cpu + 9) / 10))
 empty=$((10 - filled))
 bar=$(printf '█%.0s' $(seq 1 $filled))
 pad=$(printf '░%.0s' $(seq 1 $empty))
@@ -25,10 +25,8 @@ else
 fi
 
 # Fixed width text
-if [ "$int_cpu" -lt 100 ]; then
-  text=$(printf "%3s%%" "$cpu")
-else
-  text="${cpu}%"
-fi
+text=$(printf "%4s%%" "$cpu")
 
-echo "{\"text\":\"<span foreground='$fg'>$icon $ascii_bar $text</span>\",\"tooltip\":\"$text\"}"
+tooltip="${int_cpu} ${filled}/${empty}"
+
+echo "{\"text\":\"<span foreground='$fg'>$icon $ascii_bar $text</span>\",\"tooltip\":\"$tooltip\"}"

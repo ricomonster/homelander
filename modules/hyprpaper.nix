@@ -10,6 +10,8 @@
   };
 
   xdg.configFile."hypr/hyprpaper.conf".text = ''
+    splash = false
+
     wallpaper {
       monitor = DP-1
       path = ~/.config/wallpapers/ZYbnuDd.jpeg
