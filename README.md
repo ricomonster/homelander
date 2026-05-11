@@ -1,4 +1,6 @@
-# homelander
+# 🦅 homelander
+> "I can do whatever I want."
+
 Personal Home Manager configuration for Arch Linux + Hyprland.
 
 ## Overview
@@ -217,3 +219,6 @@ echo ".secrets" >> ~/.config/home-manager/.gitignore
 1. Create `modules/myapp.nix`
 2. Add to `imports` list in `home.nix`
 3. Run `home-manager switch --flake ~/.config/home-manager#ricomonster`
+
+---
+> *"I'm not the hero. I'm something better. I'm the truth."*
