@@ -55,6 +55,7 @@
       set -g set-clipboard on
       set -g cursor-style underline
       set-option -g status-position top
+      set -as terminal-features ',*:clipboard'
 
       # Override colors
       set -g pane-border-style "fg=#1A1B26"

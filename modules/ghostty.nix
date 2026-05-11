@@ -31,6 +31,10 @@
       window-decoration = "auto";
       background-opacity = 0.98;
 
+      # Clipboard
+      clipboard-read = "allow";
+      clipboard-write = "allow";
+
       # Terminal
       term = "xterm-256color";
 

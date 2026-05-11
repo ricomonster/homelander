@@ -8,12 +8,14 @@
       exec = "${config.xdg.configHome}/waybar/scripts/cpu.sh";
       interval = 1;
       return-type = "json";
+      on-click = "ghostty -e btop";
     };
 
     "custom/memory" = {
       exec = "${config.xdg.configHome}/waybar/scripts/memory.sh";
       interval = 10;
       return-type = "json";
+      on-click = "ghostty  -e btop";
     };
 
     "custom/power" = {
@@ -37,6 +39,17 @@
       on-click = "wpctl set-mute  @DEFAULT_AUDIO_SINK@ toggle";
       on-scroll-up = "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+";
       on-scroll-down = "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-";
+    };
+
+    # ── VPN ──────────────────────────────────────────────────────────
+    "custom/vpn" = {
+      exec = "${config.xdg.configHome}/waybar/scripts/nordvpn-status.sh";
+      on-click = "${config.xdg.configHome}/waybar/scripts/nordvpn-toggle.sh";
+      interval = 5;
+      format = "{}";
+      markup = "pango";
+      tooltip = true;
+      tooltip-format = "VPN Status / Toggle";
     };
 
     # ── Workspaces (custom scripts) ──────────────────────────────────
@@ -117,6 +130,7 @@ in {
           modules-center = [
             "custom/workspace-1"
             "custom/workspace-2"
+            "custom/vpn"
             "custom/workspace-3"
             "custom/workspace-4"
           ];
@@ -359,6 +373,16 @@ in {
     executable = true;
   };
 
+  xdg.configFile."waybar/scripts/nordvpn-status.sh" = {
+    source = ./../scripts/nordvpn-status.sh;
+    executable = true;
+  };
+
+  xdg.configFile."waybar/scripts/nordvpn-toggle.sh" = {
+    source = ./../scripts/nordvpn-toggle.sh;
+    executable = true;
+  };
+
   xdg.configFile."waybar/scripts/volume.sh" = {
     source = ./../scripts/volume.sh;
     executable = true;
@@ -378,6 +402,7 @@ in {
     source = ./../scripts/workspaces/workspace-3.sh;
     executable = true;
   };
+
   xdg.configFile."waybar/scripts/workspaces/workspace-4.sh" = {
     source = ./../scripts/workspaces/workspace-4.sh;
     executable = true;
