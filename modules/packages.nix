@@ -19,6 +19,8 @@
     rofi
 
     # apps
+    kdePackages.dolphin
+    kdePackages.breeze-icons
     qbittorrent
 
     # Fonts

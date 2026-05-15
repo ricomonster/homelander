@@ -3,6 +3,7 @@
 ---------------------
 
 -- I have weird stuff here
+hl.bind("ALT + E", hl.dsp.exec_cmd(FileManager))
 hl.bind("ALT + RETURN", hl.dsp.exec_cmd(Terminal))
 hl.bind("CTRL + SPACE", hl.dsp.exec_cmd(Applauncher))
 hl.bind("ALT + F", hl.dsp.window.fullscreen())
