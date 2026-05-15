@@ -8,6 +8,7 @@
     bc
     jq
     playerctl
+    lazygit
 
     # dev stuff
     eza
@@ -29,5 +30,7 @@
     nerd-fonts.noto
     font-awesome
     material-design-icons
+    dejavu_fonts
+    liberation_ttf
   ];
 }

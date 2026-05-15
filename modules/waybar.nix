@@ -358,53 +358,10 @@ in {
     '';
   };
 
-  xdg.configFile."waybar/scripts/cpu.sh" = {
-    source = ./../scripts/cpu.sh;
+  xdg.configFile."waybar/scripts" = {
+    source = ./waybar/scripts;
     executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/memory.sh" = {
-    source = ./../scripts/memory.sh;
-    executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/powermenu.sh" = {
-    source = ./../scripts/powermenu.sh;
-    executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/nordvpn-status.sh" = {
-    source = ./../scripts/nordvpn-status.sh;
-    executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/nordvpn-toggle.sh" = {
-    source = ./../scripts/nordvpn-toggle.sh;
-    executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/volume.sh" = {
-    source = ./../scripts/volume.sh;
-    executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/workspaces/workspace-1.sh" = {
-    source = ./../scripts/workspaces/workspace-1.sh;
-    executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/workspaces/workspace-2.sh" = {
-    source = ./../scripts/workspaces/workspace-2.sh;
-    executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/workspaces/workspace-3.sh" = {
-    source = ./../scripts/workspaces/workspace-3.sh;
-    executable = true;
-  };
-
-  xdg.configFile."waybar/scripts/workspaces/workspace-4.sh" = {
-    source = ./../scripts/workspaces/workspace-4.sh;
-    executable = true;
+    recursive = true;
+    force = true;
   };
 }

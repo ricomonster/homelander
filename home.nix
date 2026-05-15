@@ -16,6 +16,7 @@
     ./modules/fastfetch.nix
     ./modules/ghostty.nix
     ./modules/git.nix
+    ./modules/hyprland.nix
     ./modules/hyprpaper.nix
     ./modules/mpv.nix
     ./modules/packages.nix
@@ -25,12 +26,6 @@
     ./modules/waybar.nix
     ./modules/zsh.nix
   ];
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    systemd.enable = false;
-    package = null;
-  };
 
   xdg.portal = {
     enable = true;
