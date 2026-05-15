@@ -20,8 +20,9 @@ require("monitors")
 hl.on("hyprland.start", function()
 	hl.exec_cmd("sleep 0.5 && waybar & ")
 	hl.exec_cmd("hyprpaper & swayosd-server & /usr/lib/polkit-kde-authentication-agent-1")
-	hl.exec_cmd(spotify, { workspace = "3" })
-	hl.exec_cmd(primaryBrowser, { workspace = "1" })
+	hl.exec_cmd(Spotify, { workspace = "3" })
+	hl.exec_cmd(PrimaryBrowser, { workspace = "1" })
+	hl.dsp.focus({ workspace = "1" })
 end)
 
 -------------------------------

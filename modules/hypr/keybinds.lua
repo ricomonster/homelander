@@ -3,8 +3,8 @@
 ---------------------
 
 -- I have weird stuff here
-hl.bind("ALT + RETURN", hl.dsp.exec_cmd(terminal))
-hl.bind("CTRL + SPACE", hl.dsp.exec_cmd(applauncher))
+hl.bind("ALT + RETURN", hl.dsp.exec_cmd(Terminal))
+hl.bind("CTRL + SPACE", hl.dsp.exec_cmd(Applauncher))
 hl.bind("ALT + F", hl.dsp.window.fullscreen())
 
 -- Window actions (vi-style)
@@ -18,6 +18,16 @@ hl.bind("ALT + H", hl.dsp.focus({ direction = "left" }))
 hl.bind("ALT + J", hl.dsp.focus({ direction = "down" }))
 hl.bind("ALT + K", hl.dsp.focus({ direction = "up" }))
 hl.bind("ALT + L", hl.dsp.focus({ direction = "right" }))
+
+-- Window resize
+-- bindd = ALT SHIFT, equal, Resize to the right, resizeactive, 15 0
+-- bindd = ALT SHIFT, minus, Resize to the left, resizeactive, -15 0
+-- bindd = ALT SHIFT, comma, Resize upwards, resizeactive, 0 -15
+-- bindd = ALT SHIFT, period, Resize downwards, resizeactive, 0 15
+hl.bind("ALT + SHIFT + EQUAL", hl.dsp.window.resize({ x = 15, y = 0, relative = true }))
+hl.bind("ALT + SHIFT + MINUS", hl.dsp.window.resize({ x = -15, y = 0, relative = true }))
+hl.bind("ALT + SHIFT + COMMA", hl.dsp.window.resize({ x = 0, y = 15, relative = true }))
+hl.bind("ALT + SHIFT + PERIOD", hl.dsp.window.resize({ x = 0, y = -15, relative = true }))
 
 -- Workspace actions
 -- Move window to worksace

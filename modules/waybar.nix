@@ -140,7 +140,6 @@ in {
             "custom/volume"
             "network"
             "clock"
-            "custom/power"
           ];
         })
     ];
