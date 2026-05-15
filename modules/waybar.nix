@@ -56,28 +56,28 @@
     "custom/workspace-1" = {
       exec = "${config.xdg.configHome}/waybar/scripts/workspaces/workspace-1.sh";
       interval = 1;
-      on-click = "hyprctl dispatch workspace 1";
+      on-click = "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"1\" }))'";
       tooltip = "Switch to workspace 1";
     };
 
     "custom/workspace-2" = {
       exec = "${config.xdg.configHome}/waybar/scripts/workspaces/workspace-2.sh";
       interval = 1;
-      on-click = "hyprctl dispatch workspace 2";
+      on-click = "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"2\" }))'";
       tooltip = "Switch to workspace 2";
     };
 
     "custom/workspace-3" = {
       exec = "${config.xdg.configHome}/waybar/scripts/workspaces/workspace-3.sh";
       interval = 1;
-      on-click = "hyprctl dispatch workspace 3";
+      on-click = "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"3\" }))'";
       tooltip = "Switch to workspace 3";
     };
 
     "custom/workspace-4" = {
       exec = "${config.xdg.configHome}/waybar/scripts/workspaces/workspace-4.sh";
       interval = 1;
-      on-click = "hyprctl dispatch workspace 4";
+      on-click = "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"4\" }))'";
       tooltip = "Switch to workspace 4";
     };
 

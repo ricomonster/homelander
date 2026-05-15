@@ -27,37 +27,52 @@ The setup follows a clear split:
 | Multiplexer | Tmux + Tmuxifier |
 | Editor | Neovim |
 | Fonts | JetBrainsMono Nerd Font, Noto Fonts, Font Awesome |
+| File Manager | Dolphin (KDE) |
 
 ## Structure
 
 ```
-~/.config/home-manager/
-├── flake.nix                  # entry point, inputs and outputs
-├── home.nix                   # imports all modules
-├── modules/
-│   ├── packages.nix           # home.packages
-│   ├── zsh.nix                # zsh, autosuggestions, aliases
-│   ├── starship.nix           # starship prompt
-│   ├── tmux.nix               # tmux + tokyo night theme + plugins
-│   ├── git.nix                # git config, multi-account via includeIf
-│   ├── ghostty.nix            # ghostty terminal config
-│   ├── fastfetch.nix          # fastfetch system info
-│   ├── hyprland.nix           # hyprland compositor config
-│   ├── waybar.nix             # waybar config + styles
-│   ├── rofi.nix               # rofi launcher + themes
-│   ├── mpv.nix                # mpv config
-│   └── spicetify.nix          # spicetify + spotify theming
-├── scripts/
-│   ├── cpu.sh                 # waybar cpu module
-│   ├── memory.sh              # waybar memory module
-│   ├── vpn.sh                 # waybar vpn status
-│   └── vpn-toggle.sh          # waybar vpn toggle on-click
-├── wallpapers/                # wallpapers managed by home-manager
-├── rofi/                      # rofi theme files
-│   └── themes/
-├── btop/                      # btop tokyo night theme
-│   └── tokyo-night.theme
-└── tmuxifier-layouts/         # tmuxifier session layouts
+  ~/.config/home-manager/
+  ├── flake.nix                  # entry point, inputs and outputs
+  ├── home.nix                   # imports all modules
+  ├── modules/
+  │   ├── packages.nix           # home.packages
+  │   ├── zsh.nix                # zsh, autosuggestions, aliases
+  │   ├── starship.nix           # starship prompt
+  │   ├── tmux.nix               # tmux + tokyo night theme + plugins
+  │   ├── git.nix                # git config, multi-account via includeIf
+  │   ├── ghostty.nix            # ghostty terminal config
+  │   ├── fastfetch.nix          # fastfetch system info
+  │   ├── hyprland.nix           # hyprland compositor config
+  │   ├── hyprpaper.nix          # hyprpaper wallpaper daemon config
+  │   ├── waybar.nix             # waybar config + styles
+  │   ├── rofi.nix               # rofi launcher + themes
+  │   ├── mpv.nix                # mpv config
+  │   ├── btop.nix               # btop tokyo night theme
+  │   ├── hypr/                  # lua-based hyprland config files
+  │   │   ├── hyprland.lua
+  │   │   ├── keybinds.lua
+  │   │   ├── monitors.lua
+  │   │   └── variables.lua
+  │   ├── waybar/
+  │   │   └── scripts/           # waybar custom module scripts
+  │   │       ├── cpu.sh
+  │   │       ├── memory.sh
+  │   │       ├── volume.sh
+  │   │       ├── powermenu.sh
+  │   │       ├── nordvpn-status.sh
+  │   │       ├── nordvpn-toggle.sh
+  │   │       └── workspaces/
+  │   │           ├── workspace-1.sh
+  │   │           ├── workspace-2.sh
+  │   │           ├── workspace-3.sh
+  │   │           └── workspace-4.sh
+  │   ├── rofi/                  # rofi theme files
+  │   │   └── themes/
+  │   ├── btop/                  # btop themes
+  │   │   └── themes/
+  │   └── tmux-layouts/          # tmuxifier session layouts
+  └── wallpapers/                # wallpapers managed by home-manager
 ```
 
 ## Package Management Split
@@ -141,14 +156,15 @@ home-manager switch --flake ~/.config/home-manager#ricomonster
 ### hyprland
 
 Managed via `wayland.windowManager.hyprland` with `package = null` (uses system Hyprland from pacman).
+Config is fully lua-based — managed via `./hypr/` (hyprland.lua, keybinds.lua, monitors.lua, variables.lua).
 Dual monitor setup (DP-1 portrait, DP-2 landscape), NVIDIA env vars, animations, dwindle layout,
 vim-style focus navigation, workspace keybinds, screenshot via grim/slurp.
 
 ### waybar
 
 Managed via `programs.waybar`. Dual bar setup — one per monitor via `output` field.
-Custom modules: CPU usage with ASCII bar, memory usage with ASCII bar, VPN status.
-Tokyo Night color scheme. Scripts managed via `xdg.configFile`.
+Custom modules: CPU, memory, volume, VPN (NordVPN), power menu, arch button, and 4 custom workspace indicators.
+Tokyo Night color scheme. Scripts managed via `xdg.configFile` at `modules/waybar/scripts/`.
 
 ### rofi
 
@@ -180,10 +196,17 @@ Tokyo Night color scheme, JetBrains Mono font.
 Config managed via `xdg.configFile` (mpv installed via pacman due to Mesa path issues).
 NVIDIA hardware decoding (`hwdec=auto`), gpu-next renderer, JetBrains Mono subtitles.
 
-### spicetify
+### hyprpaper
 
-Managed via `spicetify-nix` flake. Spotify patched automatically on `home-manager switch`.
-`nixpkgs.config.allowUnfree = true` required.
+Managed via `xdg.configFile` (hyprpaper installed via pacman).
+Config managed via `xdg.configFile` (hyprpaper installed via pacman).
+Writes `hypr/hyprpaper.conf` and copies wallpapers to `~/.config/wallpapers/`.
+Dual monitor setup — same wallpaper on DP-1 and DP-2.
+
+### btop
+
+Theme managed via `xdg.configFile`. Tokyo Night theme applied from `modules/btop/themes/`.
+btop itself installed via pacman.
 
 ### fastfetch
 
