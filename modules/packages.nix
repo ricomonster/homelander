@@ -9,6 +9,7 @@
     jq
     playerctl
     lazygit
+    less
 
     # dev stuff
     eza
