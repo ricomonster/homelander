@@ -204,7 +204,19 @@ hl.device({
 })
 
 hl.device({
+	name = "razer-razer-viper-ultimate-1",
+	sensitivity = -1,
+	natural_scroll = true,
+})
+
+hl.device({
 	name = "razer-razer-viper-ultimate-dongle",
+	sensitivity = -1,
+	natural_scroll = true,
+})
+
+hl.device({
+	name = "razer-razer-viper-ultimate-dongle-1",
 	sensitivity = -1,
 	natural_scroll = true,
 })
