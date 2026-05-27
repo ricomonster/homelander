@@ -54,6 +54,7 @@ hl.bind("ALT + 8", hl.dsp.focus({ workspace = "8" }))
 hl.bind("ALT + 9", hl.dsp.focus({ workspace = "9" }))
 
 -- Overrides as I have a macOS fingers
+hl.bind("SUPER + A", hl.dsp.send_shortcut({ mods = "CTRL", key = "A" }))
 hl.bind("SUPER + B", hl.dsp.send_shortcut({ mods = "CTRL", key = "B" }))
 hl.bind("SUPER + C", hl.dsp.send_shortcut({ mods = "CTRL", key = "C" }))
 hl.bind("SUPER + D", hl.dsp.send_shortcut({ mods = "CTRL", key = "D" }))

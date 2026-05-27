@@ -22,7 +22,6 @@
     # apps
     kdePackages.dolphin
     kdePackages.breeze-icons
-    qbittorrent
 
     # Fonts
     noto-fonts
