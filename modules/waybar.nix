@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
   commonModules = {
     "custom/cpu" = {
       exec = "${config.xdg.configHome}/waybar/scripts/cpu.sh";

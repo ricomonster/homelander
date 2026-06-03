@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   # install hyprpaper on system level
   xdg.configFile."wallpapers" = {
     source = ./../wallpapers;

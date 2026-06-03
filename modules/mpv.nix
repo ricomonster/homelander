@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   # install mpv in system level
   xdg.configFile."mpv/mpv.conf".text = ''
     vo=gpu-next

@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   xdg.configFile."btop/themes/tokyonight_night.theme".source = ./btop/themes/tokyonight_night.theme;
 
   xdg.configFile."btop/btop.conf".text = ''

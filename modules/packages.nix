@@ -10,11 +10,10 @@
     playerctl
     lazygit
     less
+    yarn
 
     # dev stuff
     eza
-    fastfetch
-    starship
     tmuxifier
     # hyprland/wayland stuff
     rofi

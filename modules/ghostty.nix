@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.ghostty = {
     enable = true;
     package = null; # managed by pacman
