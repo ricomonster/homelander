@@ -101,6 +101,16 @@
       format = "{initialTitle}";
       max-length = 50;
     };
+
+    "bluetooth" = {
+      format = "{icon}";
+      format-icons = {
+        enabled = "[  ]";
+        disabled = "[ 󰂲 ]";
+      };
+      tooltip-format = "Bluetooth is {status}";
+      interval = 5;
+    };
   };
 in {
   programs.waybar = {
@@ -134,6 +144,7 @@ in {
             "custom/cpu"
             "custom/memory"
             "custom/volume"
+            "bluetooth"
             "network"
             "clock"
           ];

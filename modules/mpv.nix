@@ -4,7 +4,7 @@
     vo=gpu-next
     gpu-api=opengl
     hwdec=auto
-    sub-font=JetBrains Mono
+    sub-font=JetBrainsMono Nerd Font
     sub-scale=1.2
     save-position-on-quit=yes
     demuxer-max-bytes=1GiB

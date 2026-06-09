@@ -11,7 +11,7 @@
     hv: #9274ca; 
     primary: #C5C8C6; 
     ug: #0B2447;
-    font: "Monospace 11";
+    font: "JetBrainsMono Nerd Font 11";
     background-color: @bg;
     //dark: @bg;
     border: 0px;

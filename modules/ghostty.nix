@@ -9,7 +9,7 @@
 
     settings = {
       # Font
-      font-family = "JetBrains Mono";
+      font-family = "JetBrainsMono Nerd Font";
       font-style = "SemiBold";
       font-size = 9;
       font-thicken = true;

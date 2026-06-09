@@ -19,6 +19,7 @@
     rofi
 
     # apps
+    blueman
     kdePackages.dolphin
     kdePackages.breeze-icons
 

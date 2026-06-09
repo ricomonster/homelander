@@ -20,6 +20,7 @@
     ./modules/hyprpaper.nix
     ./modules/mpv.nix
     ./modules/packages.nix
+    ./modules/pipewire.nix
     ./modules/rofi.nix
     ./modules/starship.nix
     ./modules/tmux.nix
