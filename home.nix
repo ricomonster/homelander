@@ -18,6 +18,7 @@
     ./modules/git.nix
     ./modules/hyprland.nix
     ./modules/hyprpaper.nix
+    ./modules/mako.nix
     ./modules/mpv.nix
     ./modules/packages.nix
     ./modules/pipewire.nix
@@ -35,6 +36,15 @@
       pkgs.xdg-desktop-portal-hyprland
       pkgs.xdg-desktop-portal-gtk
     ];
+  };
+
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Tokyonight-Dark";
+      package = pkgs.tokyonight-gtk-theme;
+    };
+    gtk4.theme = config.gtk.theme;
   };
 
   programs.home-manager.enable = true;

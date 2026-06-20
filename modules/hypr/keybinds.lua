@@ -20,6 +20,15 @@ hl.bind("ALT + J", hl.dsp.focus({ direction = "down" }))
 hl.bind("ALT + K", hl.dsp.focus({ direction = "up" }))
 hl.bind("ALT + L", hl.dsp.focus({ direction = "right" }))
 
+hl.bind("ALT + COMMA", function()
+	local w = hl.get_active_window()
+	if w ~= nil and w.title == "htop" then
+		hl.dispatch(hl.dsp.window.float({ action = "set" }))
+	else
+		hl.dispatch(hl.dsp.window.float({ action = "toggle" }))
+	end
+end)
+
 -- Window resize
 -- bindd = ALT SHIFT, equal, Resize to the right, resizeactive, 15 0
 -- bindd = ALT SHIFT, minus, Resize to the left, resizeactive, -15 0

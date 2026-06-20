@@ -23,6 +23,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd(Spotify, { workspace = "3" })
 	hl.exec_cmd(PrimaryBrowser, { workspace = "1" })
 	hl.exec_cmd("blueman-applet")
+	hl.exec_cmd("mako")
 	hl.dsp.focus({ workspace = "1" })
 end)
 

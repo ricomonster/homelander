@@ -213,6 +213,28 @@ btop itself installed via pacman.
 Managed via `programs.fastfetch`. Shows host, OS, kernel, WM, packages, uptime,
 terminal, shell, editor, CPU, GPU, memory, disk, and network info.
 
+### fastfetch
+
+Manually setup by creating a file in `/etc/greetd/config.toml` with this content:
+```
+[terminal]
+# The VT to run the greeter on. Can be "next", "current" or a number
+# designating the VT.
+vt = 1
+
+# The default session, also known as the greeter.
+[default_session]
+
+# `agreety` is the bundled agetty/login-lookalike. You can replace `/bin/sh`
+# with whatever you want started, such as `sway`.
+command = "tuigreet --asterisks --time --remember --cmd start-hyprland 2>/dev/null"
+
+# The user to run the command as. The privileges this user must have depends
+# on the greeter. A graphical greeter may for example require the user to be
+# in the `video` group.
+user = "greeter"
+```
+
 ## NVIDIA Notes
 
 - Driver: `nvidia-open` (Turing/RTX 20-series and newer)

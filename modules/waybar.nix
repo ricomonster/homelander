@@ -4,14 +4,17 @@
       exec = "${config.xdg.configHome}/waybar/scripts/cpu.sh";
       interval = 1;
       return-type = "json";
-      on-click = "ghostty -e btop";
+      restart-interval = 5;
+      format = {};
+      on-click = "ghostty -e btop &";
     };
 
     "custom/memory" = {
       exec = "${config.xdg.configHome}/waybar/scripts/memory.sh";
       interval = 10;
       return-type = "json";
-      on-click = "ghostty  -e btop";
+      restart-interval = 5;
+      on-click = "ghostty  -e btop &";
     };
 
     "custom/power" = {

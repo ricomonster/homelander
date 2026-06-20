@@ -20,6 +20,8 @@
 
     # apps
     blueman
+    mako
+    libnotify
     kdePackages.dolphin
     kdePackages.breeze-icons
 
@@ -35,4 +37,19 @@
     dejavu_fonts
     liberation_ttf
   ];
+
+  xdg.desktopEntries.postman = {
+    name = "Postman";
+    comment = "Build, test, and document your APIs faster";
+    exec = "/opt/postman/Postman --enable-features=UseOzonePlatform --ozone-platform=wayland %U";
+    icon = "postman";
+    categories = ["Development" "Utility"];
+    type = "Application";
+    startupNotify = true;
+    settings = {
+      StartupWMClass = "postman";
+      MimeType = "x-scheme-handler/postman";
+      Path = "/opt/postman";
+    };
+  };
 }
