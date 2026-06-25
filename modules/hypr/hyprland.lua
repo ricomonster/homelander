@@ -22,6 +22,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("hyprpaper & swayosd-server & /usr/lib/polkit-kde-authentication-agent-1")
 	hl.exec_cmd(Spotify, { workspace = "3" })
 	hl.exec_cmd(PrimaryBrowser, { workspace = "1" })
+	hl.exec_cmd(Steam, { workspace = "9" })
 	hl.exec_cmd("blueman-applet")
 	hl.exec_cmd("mako")
 	hl.dsp.focus({ workspace = "1" })
@@ -37,6 +38,8 @@ hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("QT_CURSOR_SIZE", "24")
 hl.env("WLR_DRM_NO_ATOMIC", "1")
+hl.env("STEAM_FORCE_DESKTOPUI_SCALING", "1")
+hl.env("GDK_SCALE", "1")
 
 -----------------------
 ----- PERMISSIONS -----
@@ -142,6 +145,14 @@ hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" 
 --     border_size = 0,
 --     rounding    = 0,
 -- })
+hl.window_rule({
+	name = "window-rule-steam-games",
+	match = {
+		class = "^(steam_app_.*)$",
+	},
+	monitor = "DP-2",
+	workspace = "8",
+})
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
 hl.config({

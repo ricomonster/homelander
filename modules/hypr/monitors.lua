@@ -15,5 +15,6 @@ hl.monitor({
 	output = "DP-2",
 	mode = "2560x1440@143.86",
 	position = "1080x0",
+	-- position = "1920x0",
 	scale = 1,
 })
