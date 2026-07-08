@@ -5,8 +5,9 @@
 -- I have weird stuff here
 hl.bind("ALT + E", hl.dsp.exec_cmd(FileManager))
 hl.bind("ALT + RETURN", hl.dsp.exec_cmd(Terminal))
-hl.bind("CTRL + SPACE", hl.dsp.exec_cmd(Applauncher))
 hl.bind("ALT + F", hl.dsp.window.fullscreen())
+hl.bind("CTRL + Q", hl.dsp.window.kill())
+hl.bind("CTRL + SPACE", hl.dsp.exec_cmd(Applauncher))
 
 -- Window actions (vi-style)
 hl.bind("ALT + SHIFT + H", hl.dsp.window.move({ direction = "left" }))
@@ -117,3 +118,6 @@ hl.bind("XF86AudioNext", hl.dsp.exec_cmd("playerctl next"), { locked = true })
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true })
+
+-- macOS counterpart
+hl.bind("CTRL + SHIFT + 4", hl.dsp.exec_cmd('grim -g "$(slurp)" - | swappy -f -'))

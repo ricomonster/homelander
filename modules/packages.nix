@@ -11,6 +11,9 @@
     lazygit
     less
     yarn
+    grim
+    slurp
+    swappy
 
     # dev stuff
     eza

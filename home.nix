@@ -19,6 +19,7 @@
     ./modules/hyprland.nix
     ./modules/hyprpaper.nix
     ./modules/mako.nix
+    ./modules/mangohud.nix
     ./modules/mpv.nix
     ./modules/packages.nix
     ./modules/pipewire.nix

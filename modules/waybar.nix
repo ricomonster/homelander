@@ -121,7 +121,7 @@ in {
     settings = [
       (commonModules
         // {
-          output = "DP-1";
+          output = "DP-2";
           layer = "top";
           position = "top";
           margin-top = 5;
@@ -131,7 +131,7 @@ in {
       (commonModules
         // {
           # Main
-          output = "DP-2";
+          output = "DP-1";
           layer = "top";
           position = "top";
           margin-top = 5;

@@ -150,8 +150,17 @@ hl.window_rule({
 	match = {
 		class = "^(steam_app_.*)$",
 	},
-	monitor = "DP-2",
+	monitor = "DP-1",
 	workspace = "8",
+})
+
+hl.window_rule({
+	name = "window-rule-steam-app",
+	match = {
+		class = "^(steam)$",
+	},
+	monitor = "DP-2",
+	workspace = "9",
 })
 
 -- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
@@ -234,6 +243,12 @@ hl.device({
 	natural_scroll = true,
 })
 
+hl.device({
+	name = "compx-pulsar-xlite-wireless",
+	sensitivity = -1,
+	natural_scroll = true,
+})
+
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
@@ -249,32 +264,32 @@ require("keybinds")
 -- Example window rules that are useful
 hl.workspace_rule({
 	workspace = "1",
-	monitor = "DP-1",
+	monitor = "DP-2",
 	persistent = true,
 })
 hl.workspace_rule({
 	workspace = "2",
-	monitor = "DP-2",
+	monitor = "DP-1",
 	persistent = true,
 })
 hl.workspace_rule({
 	workspace = "3",
-	monitor = "DP-1",
+	monitor = "DP-2",
 	persistent = true,
 })
 hl.workspace_rule({
 	workspace = "4",
-	monitor = "DP-2",
+	monitor = "DP-1",
 	persistent = true,
 })
 hl.workspace_rule({
 	workspace = "8",
-	monitor = "DP-2",
+	monitor = "DP-1",
 	persistent = true,
 })
 hl.workspace_rule({
 	workspace = "9",
-	monitor = "DP-1",
+	monitor = "DP-2",
 	persistent = true,
 })
 
