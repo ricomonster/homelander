@@ -5,17 +5,17 @@
     nis_steam_sharpness=10
     legacy_layout=0
     horizontal
-    gpu_stats
-    gpu_power
-    cpu_stats
-    cpu_power
-    vram
-    ram
     fps
     frametime=0
+    frame_timing=1
+    cpu_stats
+    cpu_power
+    gpu_stats
+    gpu_power
+    ram
+    vram
     hud_no_margin
     table_columns=14
-    frame_timing=1
     text_color=BDBDBD
     gpu_color=00E5E5
     cpu_color=00E5E5

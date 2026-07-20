@@ -77,6 +77,7 @@ hl.bind("SUPER + O", hl.dsp.send_shortcut({ mods = "CTRL", key = "O" }))
 hl.bind("SUPER + P", hl.dsp.send_shortcut({ mods = "CTRL", key = "P" }))
 hl.bind("SUPER + U", hl.dsp.send_shortcut({ mods = "CTRL", key = "U" }))
 hl.bind("SUPER + X", hl.dsp.send_shortcut({ mods = "CTRL", key = "X" }))
+hl.bind("SUPER + Y", hl.dsp.send_shortcut({ mods = "CTRL", key = "Y" }))
 
 -- For browsers tabs --
 hl.bind("CTRL + 1", hl.dsp.send_shortcut({ mods = "ALT", key = "1" }))

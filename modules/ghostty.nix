@@ -14,7 +14,7 @@
       font-size = 9;
       font-thicken = true;
       font-feature = ["calt=0" "zero"];
-      adjust-cell-height = "15%";
+      adjust-cell-height = "20%";
 
       # Cursor
       cursor-style = "underline";

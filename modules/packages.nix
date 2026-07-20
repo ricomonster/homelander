@@ -35,6 +35,8 @@
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
     nerd-fonts.noto
+    monocraft
+    _0xproto
     font-awesome
     material-design-icons
     dejavu_fonts

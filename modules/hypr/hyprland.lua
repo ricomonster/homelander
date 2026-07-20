@@ -41,6 +41,9 @@ hl.env("WLR_DRM_NO_ATOMIC", "1")
 hl.env("STEAM_FORCE_DESKTOPUI_SCALING", "1")
 hl.env("GDK_SCALE", "1")
 
+hl.env("__GL_GSYNC_ALLOWED", "0")
+hl.env("__GL_VRR_ALLOWED", "0")
+
 -----------------------
 ----- PERMISSIONS -----
 -----------------------
