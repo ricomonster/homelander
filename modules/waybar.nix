@@ -2,7 +2,7 @@
   commonModules = {
     "custom/cpu" = {
       exec = "${config.xdg.configHome}/waybar/scripts/cpu.sh";
-      interval = 1;
+      interval = 5;
       return-type = "json";
       restart-interval = 5;
       format = {};
@@ -54,7 +54,7 @@
     # ── Workspaces (custom scripts) ──────────────────────────────────
     "custom/workspace-1" = {
       exec = "${config.xdg.configHome}/waybar/scripts/workspaces/workspace-1.sh";
-      interval = 1;
+      interval = 2;
       on-click = "hyprctl eval 'hl.dispatch(hl.dsp.focus({ workspace = \"1\" }))'";
       tooltip = "Switch to workspace 1";
     };
