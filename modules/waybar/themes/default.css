@@ -132,6 +132,7 @@ window#waybar {
 }
 
 #custom-logo,
+#custom-vpn,
 #battery {
   background-color: @surface_container_highest;
   color: @on_surface;

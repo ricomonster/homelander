@@ -18,6 +18,7 @@
         "clock"
         "custom/separatordot"
         "pulseaudio"
+        "custom/vpn"
       ];
       "modules-right" = [
         "custom/notification"
@@ -137,6 +138,15 @@
         "on-click" = "swaync-client -t -sw";
         "on-click-right" = "swaync-client -d -sw";
         escape = true;
+      };
+
+      "custom/vpn" = {
+        exec = "${scripts}/nordvpn-status-v2.sh";
+        on-click = "${scripts}/nordvpn-toggle.sh";
+        interval = 5;
+        return-type = "json";
+        format = "{}";
+        tooltip = true;
       };
     }
   ];
