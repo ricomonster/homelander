@@ -55,7 +55,7 @@ else
 fi
 
 # Fixed width text
-text=$(printf "%2d%%" "$usage")
+text=$(printf "%3d%%" "$usage")
 
 # Tooltip with per-core usage
 core_info=""

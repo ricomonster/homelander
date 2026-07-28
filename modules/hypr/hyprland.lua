@@ -1,12 +1,11 @@
----------------------
----- VARIABLES ----
----------------------
+-- VARIABLES
 require("variables")
 
-------------------
----- MONITORS ----
-------------------
+-- MONITORS
 require("monitors")
+
+-- WORKSPACES
+require("workspaces")
 
 -------------------
 ---- AUTOSTART ----
@@ -20,7 +19,7 @@ require("monitors")
 hl.on("hyprland.start", function()
 	hl.exec_cmd("sleep 0.5 && waybar & ")
 	hl.exec_cmd("hyprpaper & swayosd-server & /usr/lib/polkit-kde-authentication-agent-1")
-	hl.exec_cmd(Spotify, { workspace = "3" })
+	hl.exec_cmd(Spotify, { workspace = "2" })
 	hl.exec_cmd(PrimaryBrowser, { workspace = "1" })
 	hl.exec_cmd(Steam, { workspace = "9" })
 	hl.exec_cmd("blueman-applet")
@@ -263,44 +262,10 @@ hl.device({
 require("keybinds")
 
 --------------------------------
----- WINDOWS AND WORKSPACES ----
+---- WINDOWS ----
 --------------------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Window-Rules/
--- and https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
-
--- Example window rules that are useful
-hl.workspace_rule({
-	workspace = "1",
-	monitor = "DP-2",
-	persistent = true,
-})
-hl.workspace_rule({
-	workspace = "2",
-	monitor = "DP-1",
-	persistent = true,
-})
-hl.workspace_rule({
-	workspace = "3",
-	monitor = "DP-2",
-	persistent = true,
-})
-hl.workspace_rule({
-	workspace = "4",
-	monitor = "DP-1",
-	persistent = true,
-})
-hl.workspace_rule({
-	workspace = "8",
-	monitor = "DP-1",
-	persistent = true,
-})
-hl.workspace_rule({
-	workspace = "9",
-	monitor = "DP-2",
-	persistent = true,
-})
-
 local suppressMaximizeRule = hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
 	name = "suppress-maximize-events",

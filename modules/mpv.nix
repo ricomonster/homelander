@@ -6,7 +6,17 @@
     hwdec=auto
     sub-font=JetBrainsMono Nerd Font
     sub-scale=1.2
+
+    demuxer-max-bytes=2GiB
+    demuxer-max-back-bytes=2GiB
+    demuxer-readahead-secs=60
+    demuxer-cache-wait=yes
+    hr-seek=no
+    cache-pause=yes
+    prefetch-playlist=yes
+
     save-position-on-quit=yes
-    demuxer-max-bytes=1GiB
+    write-filename-in-watch-later-config=yes
+    save-watch-history=yes
   '';
 }
