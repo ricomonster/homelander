@@ -5,65 +5,74 @@
       position = "top";
       height = 35;
       spacing = 6;
-      "margin-top" = 0;
-      "margin-bottom" = 0;
-      "modules-left" = [
+      margin-top = 0;
+      margin-bottom = 0;
+      modules-left = [
         "custom/logo"
         "hyprland/window"
       ];
-      "modules-center" = [
+      modules-center = [
         "cpu"
         "memory"
         "hyprland/workspaces"
         "clock"
         "custom/separatordot"
-        "pulseaudio"
         "custom/vpn"
+        "pulseaudio"
       ];
-      "modules-right" = [
-        "custom/notification"
+      modules-right = [
         "network"
         "bluetooth"
       ];
       "custom/logo" = {
         format = "   ";
         tooltip = false;
+        on-click = "${scripts}/powermenu.sh";
       };
+
       "hyprland/window" = {
         format = "{initialTitle}";
-        "max-length" = 15;
+        max-length = 15;
       };
-      "cpu" = {
+
+      cpu = {
         interval = 2;
         format = " {usage}%";
         tooltip = true;
-        "on-click" = "ghostty -e btop &";
+        on-click = "ghostty -e btop &";
       };
-      "memory" = {
+
+      memory = {
         format = "󰘚 {percentage}%";
         interval = 5;
-        "tooltip-format" = " RAM               󰓡 SWAP\n\n󰳆 Used:  {used:0.1f} GB      󰳆 Used:  {swapUsed:0.1f} GB\n󰗖 Free:  {avail:0.1f} GB     󰗖 Free:  {swapAvail:0.1f} GB\n󰦎 Total: {total:0.1f} GB     󰦎 Total: {swapTotal:0.1f} GB";
-        "on-click" = "ghostty -e btop &";
+        tooltip-format = " RAM               󰓡 SWAP\n\n󰳆 Used:  {used:0.1f} GB      󰳆 Used:  {swapUsed:0.1f} GB\n󰗖 Free:  {avail:0.1f} GB     󰗖 Free:  {swapAvail:0.1f} GB\n󰦎 Total: {total:0.1f} GB     󰦎 Total: {swapTotal:0.1f} GB";
+        on-click = "ghostty -e btop &";
       };
-      "tray" = {
+
+      tray = {
         "icon-size" = 18;
         spacing = 12;
       };
-      "clock" = {
+
+      clock = {
         format = "{:%a %B %d %I:%M:%S %p}";
         "format-alt" = "{:%a, %d %B %Y}";
         "tooltip-format" = "<tt><small>{calendar}</small></tt>";
         interval = 1;
       };
+
       "custom/separatordot" = {
         format = "•";
         tooltip = false;
       };
-      "backlight" = {
+
+      # Leaving this in case i'll have a laptop
+      backlight = {
         format = "󰃠";
         tooltip = false;
       };
-      "battery" = {
+
+      battery = {
         states = {
           warning = 30;
           critical = 15;
@@ -86,39 +95,43 @@
           "󰁹"
         ];
       };
-      "pulseaudio" = {
+
+      pulseaudio = {
         format = "  {volume}%";
-        "format-muted" = "󰖁";
-        "on-click" = "pavucontrol";
-        "tooltip-format" = "Volume: {volume}%";
+        format-muted = "󰖁";
+        on-click = "pavucontrol";
+        tooltip-format = "Volume: {volume}%";
       };
-      "network" = {
+
+      network = {
         interval = 10;
-        "format-wifi" = "{icon}";
-        "format-ethernet" = "󰈀";
-        "format-disconnected" = "󰖪";
-        "format-disabled" = "󰖪";
-        "tooltip-format-wifi" = "WiFi: {essid} ({signalStrength}%)\nIP: {ipaddr}";
-        "tooltip-format-ethernet" = "Ethernet: {ifname}\nIP: {ipaddr}";
-        "tooltip-format-disconnected" = "Disconnected";
-        "format-icons" = [
+        format-wifi = "{icon}";
+        format-ethernet = "󰈀";
+        format-disconnected = "󰖪";
+        format-disabled = "󰖪";
+        tooltip-format-wifi = "WiFi: {essid} ({signalStrength}%)\nIP: {ipaddr}";
+        tooltip-format-ethernet = "Ethernet: {ifname}\nIP: {ipaddr}";
+        tooltip-format-disconnected = "Disconnected";
+        format-icons = [
           "󰤯"
           "󰤟"
           "󰤢"
           "󰤥"
           "󰤨"
         ];
-        "on-click" = "nmgui";
+        on-click = "nmgui";
       };
-      "bluetooth" = {
-        "format-on" = "󰂯";
-        "format-off" = "󰂲";
-        "format-disabled" = "󰂲";
-        "format-connected" = "󰂱";
-        "tooltip-format" = "{controller_alias}\t{controller_address}\n\n{status}";
-        "tooltip-format-connected" = "Connected to: {device_alias}\nBattery: {device_battery_percentage}%";
-        "on-click" = "blueman-manager";
+
+      bluetooth = {
+        format-on = "󰂯";
+        format-off = "󰂲";
+        format-disabled = "󰂲";
+        format-connected = "󰂱";
+        tooltip-format = "{controller_alias}\t{controller_address}\n\n{status}";
+        tooltip-format-connected = "Connected to: {device_alias}\nBattery: {device_battery_percentage}%";
+        on-click = "blueman-manager";
       };
+
       "custom/notification" = {
         tooltip = true;
         format = "<span size='12pt'>{icon}</span>";

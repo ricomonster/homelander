@@ -51,6 +51,7 @@ hl.bind("ALT + SHIFT + 6", hl.dsp.window.move({ workspace = "6" }))
 hl.bind("ALT + SHIFT + 7", hl.dsp.window.move({ workspace = "7" }))
 hl.bind("ALT + SHIFT + 8", hl.dsp.window.move({ workspace = "8" }))
 hl.bind("ALT + SHIFT + 9", hl.dsp.window.move({ workspace = "9" }))
+hl.bind("ALT + SHIFT + 0", hl.dsp.window.move({ workspace = "10" }))
 
 -- Focus on workspace
 hl.bind("ALT + 1", hl.dsp.focus({ workspace = "1" }))
@@ -62,6 +63,7 @@ hl.bind("ALT + 6", hl.dsp.focus({ workspace = "6" }))
 hl.bind("ALT + 7", hl.dsp.focus({ workspace = "7" }))
 hl.bind("ALT + 8", hl.dsp.focus({ workspace = "8" }))
 hl.bind("ALT + 9", hl.dsp.focus({ workspace = "9" }))
+hl.bind("ALT + 0", hl.dsp.focus({ workspace = "10" }))
 
 -- Overrides as I have a macOS fingers
 hl.bind("SUPER + A", hl.dsp.send_shortcut({ mods = "CTRL", key = "A" }))
