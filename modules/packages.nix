@@ -18,6 +18,7 @@
     # dev stuff
     eza
     tmuxifier
+    herdr
     # hyprland/wayland stuff
     rofi
 
