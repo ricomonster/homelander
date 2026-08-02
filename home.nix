@@ -16,6 +16,7 @@
     ./modules/fastfetch.nix
     ./modules/ghostty.nix
     ./modules/git.nix
+    ./modules/herdr.nix
     ./modules/hyprland.nix
     ./modules/hyprpaper.nix
     ./modules/mako.nix
