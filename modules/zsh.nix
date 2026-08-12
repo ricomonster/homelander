@@ -49,6 +49,10 @@
       export PATH="$HOME/.cargo/bin:$PATH"
       export PATH="$HOME/.local/bin:$PATH"
 
+      # Ponytail
+      export PONYTAIL_DEFAULT_MODE="full"
+      export PONYTAIL_SUBAGENT_MATCHER="principal-engineer"
+
       # Secrets (not managed by Nix, safe to commit home.nix)
       [ -f ~/.secrets ] && source ~/.secrets
     '';
