@@ -18,5 +18,7 @@
     save-position-on-quit=yes
     write-filename-in-watch-later-config=yes
     save-watch-history=yes
+
+    watch-later-directory=~~state/watch_later
   '';
 }
