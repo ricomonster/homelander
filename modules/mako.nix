@@ -1,5 +1,7 @@
 {...}: {
   xdg.configFile."mako/config".text = ''
+    output=DP-1
+
     # Tokyo Night colors
     background-color=#1a1b26
     text-color=#c0caf5

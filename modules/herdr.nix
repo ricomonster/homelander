@@ -45,15 +45,33 @@
     description = "navigate right (vim/herdr)"
 
     [[keys.command]]
-    key = "prefix+up"
+    key = "prefix+f"
     type = "plugin_action"
-    command = "cloudmanic.herdr-plus.projects"
-    description = "herdr-plus: projects"
-
-    [[keys.command]]
-    key = "prefix+down"
-    type = "plugin_action"
-    command = "cloudmanic.herdr-plus.quick-actions"
-    description = "herdr-plus: quick actions"
+    command = "nicolegros.herdr-launcher.open"
+    description = "project launcher"
   '';
+
+  xdg.configFile."herdr/scripts/setup-workspace.sh" = {
+    text = ''
+      #!/bin/sh
+      # ~/.config/herdr/scripts/setup-workspace.sh
+
+      LAYOUT="$HERDR_LAUNCHER_DIR/config.yaml"
+      CONFIG_DIR=$(herdr plugin config-dir herdr-spreader 2>/dev/null)
+
+      if [ -f "$LAYOUT" ] && [ -n "$CONFIG_DIR" ]; then
+        mkdir -p "$CONFIG_DIR"
+        cp "$LAYOUT" "$CONFIG_DIR/config.yaml"
+
+        herdr plugin action invoke herdr-spreader.apply
+        status=$?
+
+        # clear copied layout
+        rm -f "$CONFIG_DIR/config.yaml" "$CONFIG_DIR/config.yml"
+
+        exit $status
+      fi
+    '';
+    executable = true;
+  };
 }
