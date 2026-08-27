@@ -10,11 +10,12 @@
     settings = {
       # Font
       font-family = "JetBrainsMono Nerd Font";
-      font-style = "SemiBold";
+      # font-style = "SemiBold";
       font-size = 9;
-      font-thicken = true;
+      # font-thicken = true;
       font-feature = ["calt=0" "zero"];
-      # adjust-cell-height = "20%";
+      alpha-blending = "linear";
+      adjust-cell-height = "20%";
 
       # Cursor
       cursor-style = "underline";

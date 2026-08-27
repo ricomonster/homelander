@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  apple-fonts,
   ...
 }: {
   home.packages = with pkgs; [
@@ -19,6 +20,7 @@
     eza
     tmuxifier
     herdr
+
     # hyprland/wayland stuff
     rofi
 
@@ -36,12 +38,12 @@
     nerd-fonts.jetbrains-mono
     noto-fonts-color-emoji
     nerd-fonts.noto
-    monocraft
-    _0xproto
+    # _0xproto
     font-awesome
     material-design-icons
     dejavu_fonts
     liberation_ttf
+    # apple-fonts.packages.${pkgs.system}.sf-mono
   ];
 
   xdg.desktopEntries.postman = {

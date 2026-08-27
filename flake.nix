@@ -8,11 +8,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    apple-fonts = {
+      url = "github:Lyndeno/apple-fonts.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
     nixpkgs,
     home-manager,
+    apple-fonts,
     ...
   }: let
     system = "x86_64-linux";
@@ -20,7 +25,10 @@
     mkHome = theme:
       home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = {inherit theme;};
+        extraSpecialArgs = {
+          inherit theme;
+          apple-fonts = apple-fonts;
+        };
         modules = [./home.nix];
       };
   in {
