@@ -54,13 +54,11 @@
       export PATH="$BUN_INSTALL/bin:$PATH"
 
       # Ponytail
-      export PONYTAIL_DEFAULT_MODE="full"
-      export PONYTAIL_SUBAGENT_MATCHER="principal-engineer"
+      export PONYTAIL_DEFAULT_MODE="off"
+      # export PONYTAIL_SUBAGENT_MATCHER="principal-engineer"
 
       # Herdr
-      for _f in $HOME/.config/herdr/plugins/github/herdr-automatic-rename-*/shell/hook.zsh(N); do
-        source $_f; break
-      done
+      [[ -n "$HERDR_ENV" ]] && source "$HOME/.config/herdr/plugins/github/dev-shimada.auto-tab-name-bb12b11a4dc6/shell/hook.zsh"
 
       # Secrets (not managed by Nix, safe to commit home.nix)
       [ -f ~/.secrets ] && source ~/.secrets

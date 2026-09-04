@@ -1,5 +1,7 @@
 {...}: {
   xdg.configFile."herdr/config.toml".text = ''
+    onboarding = false
+
     [ui.toast]
     delivery = "terminal"
 

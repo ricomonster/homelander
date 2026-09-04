@@ -1,149 +1,111 @@
-{...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   programs.fastfetch = {
     enable = true;
 
     settings = {
-      display = {
-        disableLinewrap = false;
-        separator = "";
-        key.width = 14;
-        temp = {};
-        bar = {
-          width = 12;
-          char = {
-            total = "";
-            elapsed = "";
-          };
-          border = {
-            left = "";
-            leftElapsed = "";
-            right = "";
-            rightElapsed = "";
-          };
-          color.total = null;
+      logo = {
+        source = "~/.config/ml4w/assets/ml4w.png";
+        type = "auto";
+        width = 12;
+        padding = {
+          top = 1;
+          right = 4;
+          left = 3;
         };
-        percent.type = ["bar" "bar-monochrome"];
       };
 
-      modules = [
-        {
-          type = "title";
-          color = {
-            user = "red";
-            at = "red";
-            host = "red";
-          };
-        }
-        "break"
-        {
-          type = "host";
-          key = "{icon} host";
-          keyColor = "blue";
-          format = "{name}";
-        }
-        {
-          type = "os";
-          key = "{icon} os";
-          keyColor = "blue";
-          format = "{name} {codename} {version} ({arch})";
-        }
-        {
-          type = "kernel";
-          key = "{icon} kernel";
-          keyColor = "blue";
-          format = "{sysname} {release}";
-        }
-        {
-          type = "wm";
-          key = "{icon} wm";
-          keyColor = "blue";
-          format = "{pretty-name}";
-        }
-        {
-          type = "font";
-          key = "{icon} sysfont";
-          keyColor = "blue";
-          format = "{combined}";
-        }
-        {
-          type = "packages";
-          key = "{icon} packages";
-          keyColor = "blue";
-        }
-        {
-          type = "uptime";
-          key = "{icon} uptime";
-          keyColor = "blue";
-          format = "{formatted}";
-        }
-        {
-          type = "terminal";
-          key = "{icon} term";
-          keyColor = "magenta";
-          format = "{pretty-name} {version}";
-        }
-        {
-          type = "terminalFont";
-          key = " termfont";
-          keyColor = "magenta";
-          format = "{combined}";
-        }
-        {
-          type = "shell";
-          key = "{icon} shell";
-          keyColor = "magenta";
-          format = "{pretty-name} {version}";
-        }
-        {
-          type = "editor";
-          key = "{icon} editor";
-          keyColor = "magenta";
-          format = "{name} {version}";
-        }
-        {
-          type = "cpu";
-          key = "{icon} cpu";
-          keyColor = "cyan";
-          showPeCoreCount = true;
-          temp = true;
-          format = "{name} ({march}, {core-types} cores) @ {freq-max}";
-        }
-        {
-          type = "gpu";
-          key = "{icon} gpu";
-          keyColor = "cyan";
-          temp = true;
-          format = "{name} [{type}] ({platform-api}, {core-count} cores) @ {frequency}";
-        }
-        {
-          type = "memory";
-          key = "{icon} mem";
-          keyColor = "cyan";
-          format = "{percentage-bar} {used} / {total}";
-        }
-        {
-          type = "disk";
-          key = "󰉉 disk";
-          keyColor = "cyan";
-          folders = "/";
-          format = "{size-percentage-bar} {size-used} / {size-total} ({filesystem})";
-        }
-        {
-          type = "localip";
-          key = "{icon} network";
-          keyColor = "cyan";
-          showIpv4 = true;
-          showSpeed = true;
-          format = "{ipv4} ({ifname}) [{speed}]";
-        }
-        "break"
-        {
-          type = "custom";
-          format = "{#30}󰊠  {#31}󰊠  {#32}󰊠  {#33}󰊠  {#34}󰊠  {#35}󰊠  {#36}󰊠  {#37}󰊠";
-        }
-        "break"
-        "break"
-      ];
+      display.separator = " ";
+
+      modules =
+        [
+          {
+            key = "╭───────────╮";
+            type = "custom";
+          }
+          {
+            key = "│ {#34} user    {#keys}│";
+            type = "title";
+            format = "{user-name}";
+          }
+          {
+            key = "│ {#34}󰇅 hname   {#keys}│";
+            type = "title";
+            format = "{host-name}";
+          }
+        ]
+        ++ lib.optionals (!pkgs.stdenv.isDarwin) [
+          {
+            condition = {
+              "!system" = "macOS";
+            };
+            type = "disk";
+            keyIcon = "";
+            key = "│{#34} {icon} os age {#keys} │";
+            folders = "/";
+            format = "{create-time:10} [{days} days ({years} years)]";
+          }
+        ]
+        ++ [
+          {
+            key = "│ {#34}󰅐 uptime  {#keys}│";
+            type = "uptime";
+          }
+          {
+            key = "│ {#34}{icon} distro  {#keys}│";
+            type = "os";
+          }
+          {
+            key = "│ {#34} kernel  {#keys}│";
+            type = "kernel";
+          }
+          {
+            key = "│ {#34} wm      {#keys}│";
+            type = "wm";
+          }
+          {
+            key = "│ {#34}󰇄 desktop {#keys}│";
+            type = "de";
+          }
+          {
+            key = "│ {#34} term    {#keys}│";
+            type = "terminal";
+          }
+          {
+            key = "│ {#34} shell   {#keys}│";
+            type = "shell";
+          }
+          {
+            key = "│ {#34}󰍛 cpu     {#keys}│";
+            type = "cpu";
+            showPeCoreCount = true;
+          }
+          {
+            key = "│ {#34}󰉉 disk    {#keys}│";
+            type = "disk";
+            folders = "/";
+          }
+          {
+            key = "│ {#34} memory  {#keys}│";
+            type = "memory";
+          }
+          {
+            key = "├───────────┤";
+            type = "custom";
+          }
+          {
+            key = "│ {#34} colors  {#keys}│";
+            type = "colors";
+            symbol = "circle";
+          }
+          {
+            key = "╰───────────╯";
+            type = "custom";
+          }
+        ];
     };
   };
 }

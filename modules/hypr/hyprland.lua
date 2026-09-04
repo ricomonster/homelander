@@ -29,6 +29,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("sleep 0.5 && waybar & ")
 	hl.exec_cmd("hyprpaper & swayosd-server & /usr/lib/polkit-kde-authentication-agent-1")
 	hl.exec_cmd(Spotify, { workspace = "2" })
+	hl.exec_cmd(Discord, { workspace = "2" })
 	hl.exec_cmd(PrimaryBrowser, { workspace = "1" })
 	hl.exec_cmd(Steam, { workspace = "9" })
 	-- hl.exec_cmd("blueman-applet")
@@ -51,6 +52,10 @@ hl.env("GDK_SCALE", "1")
 
 hl.env("__GL_GSYNC_ALLOWED", "0")
 hl.env("__GL_VRR_ALLOWED", "0")
+
+hl.env("LIBVA_DRIVER_NAME", "nvidia")
+hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
+hl.env("GBM_BACKEND", "nvidia-drm")
 
 -----------------------
 ---- LOOK AND FEEL ----
@@ -155,5 +160,12 @@ hl.config({
 	misc = {
 		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
 		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
+	},
+})
+
+-- NVIDIA stuff
+hl.config({
+	render = {
+		direct_scanout = false,
 	},
 })
