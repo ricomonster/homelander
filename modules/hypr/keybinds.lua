@@ -1,13 +1,17 @@
+-- VARIABLES
+local vars = require("variables")
+local apps = vars.apps
+
 ---------------------
 ---- KEYBINDINGS ----
 ---------------------
 
 -- I have weird stuff here
-hl.bind("ALT + E", hl.dsp.exec_cmd(FileManager))
-hl.bind("ALT + RETURN", hl.dsp.exec_cmd(Terminal))
+-- hl.bind("ALT + E", hl.dsp.exec_cmd(apps.dolphin))
+hl.bind("ALT + RETURN", hl.dsp.exec_cmd(apps.ghostty))
 hl.bind("ALT + F", hl.dsp.window.fullscreen())
 hl.bind("CTRL + Q", hl.dsp.window.kill())
-hl.bind("CTRL + SPACE", hl.dsp.exec_cmd(Applauncher))
+hl.bind("CTRL + SPACE", hl.dsp.exec_cmd(apps.applauncher))
 
 -- Window actions (vi-style)
 hl.bind("ALT + SHIFT + H", hl.dsp.window.move({ direction = "left" }))

@@ -58,21 +58,9 @@
       #!/bin/sh
       # ~/.config/herdr/scripts/setup-workspace.sh
 
-      LAYOUT="$HERDR_LAUNCHER_DIR/config.yaml"
-      CONFIG_DIR=$(herdr plugin config-dir herdr-spreader 2>/dev/null)
-
-      if [ -f "$LAYOUT" ] && [ -n "$CONFIG_DIR" ]; then
-        mkdir -p "$CONFIG_DIR"
-        cp "$LAYOUT" "$CONFIG_DIR/config.yaml"
-
-        herdr plugin action invoke herdr-spreader.apply
-        status=$?
-
-        # clear copied layout
-        rm -f "$CONFIG_DIR/config.yaml" "$CONFIG_DIR/config.yml"
-
-        exit $status
-      fi
+      herdr workspace rename \
+        "$HERDR_LAUNCHER_WORKSPACE_ID" \
+        "$HERDR_LAUNCHER_NAME"
     '';
     executable = true;
   };

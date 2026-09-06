@@ -1,10 +1,14 @@
+-- VARIABLES
+local vars = require("variables")
+local monitors = vars.monitors
+
 ------------------
 ---- MONITORS ----
 ------------------
 
 -- See https://wiki.hypr.land/Configuring/Basics/Monitors/
 hl.monitor({
-	output = "DP-2",
+	output = monitors.secondary,
 	-- mode = "1920x1080@71.91",
 	mode = "1920x1080@60",
 	position = "0x0",
@@ -13,7 +17,7 @@ hl.monitor({
 })
 
 hl.monitor({
-	output = "DP-1",
+	output = monitors.primary,
 	-- mode = "2560x1440@143.86",
 	mode = "2560x1440@120",
 	position = "1080x0",

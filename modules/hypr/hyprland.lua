@@ -1,6 +1,3 @@
--- VARIABLES
-require("variables")
-
 -- MONITORS
 require("monitors")
 
@@ -16,6 +13,10 @@ require("windows")
 -- INPUTS
 require("inputs")
 
+-- VARIABLES
+local vars = require("variables")
+local apps = vars.apps
+
 -------------------
 ---- AUTOSTART ----
 -------------------
@@ -28,10 +29,10 @@ require("inputs")
 hl.on("hyprland.start", function()
 	hl.exec_cmd("sleep 0.5 && waybar & ")
 	hl.exec_cmd("hyprpaper & swayosd-server & /usr/lib/polkit-kde-authentication-agent-1")
-	hl.exec_cmd(Spotify, { workspace = "2" })
-	hl.exec_cmd(Discord, { workspace = "2" })
-	hl.exec_cmd(PrimaryBrowser, { workspace = "1" })
-	hl.exec_cmd(Steam, { workspace = "9" })
+	hl.exec_cmd(apps.spotify, { workspace = "2" })
+	hl.exec_cmd(apps.discord, { workspace = "2" })
+	hl.exec_cmd(apps.helium, { workspace = "1" })
+	hl.exec_cmd(apps.steam, { workspace = "9" })
 	-- hl.exec_cmd("blueman-applet")
 	hl.exec_cmd("mako")
 	hl.dsp.focus({ workspace = "1" })

@@ -1,3 +1,7 @@
+-- VARIABLES
+local vars = require("variables")
+local monitors = vars.monitors
+
 -- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
 local suppressMaximizeRule = hl.window_rule({
 	-- Ignore maximize requests from all apps. You'll probably like this.
@@ -6,7 +10,7 @@ local suppressMaximizeRule = hl.window_rule({
 
 	suppress_event = "maximize",
 })
--- suppressMaximizeRule:set_enabled(false)
+suppressMaximizeRule:set_enabled(false)
 
 hl.window_rule({
 	-- Fix some dragging issues with XWayland
@@ -27,7 +31,7 @@ hl.window_rule({
 	match = {
 		class = "^(steam_app_.*)$",
 	},
-	monitor = "DP-1",
+	monitor = monitors.primary,
 	workspace = "8",
 })
 
@@ -36,7 +40,7 @@ hl.window_rule({
 	match = {
 		class = "^(steam)$",
 	},
-	monitor = "DP-2",
+	monitor = monitors.secondary,
 	workspace = "9",
 })
 
