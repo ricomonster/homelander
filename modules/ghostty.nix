@@ -9,13 +9,14 @@
 
     settings = {
       # Font
-      font-family = "JetBrainsMono Nerd Font";
+      # font-family = "JetBrainsMono Nerd Font";
+      font-family = "SF Mono";
       # font-style = "SemiBold";
-      font-size = 9;
+      font-size = 8;
       # font-thicken = true;
       font-feature = ["calt=0" "zero"];
       alpha-blending = "linear";
-      adjust-cell-height = "20%";
+      # adjust-cell-height = "20%";
 
       # Cursor
       cursor-style = "underline";
