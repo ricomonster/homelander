@@ -43,6 +43,6 @@
     material-design-icons
     dejavu_fonts
     liberation_ttf
-    apple-fonts.packages.${pkgs.system}.sf-mono
+    apple-fonts.packages.${pkgs.stdenv.hostPlatform.system}.sf-mono
   ];
 }

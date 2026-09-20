@@ -23,5 +23,6 @@
     ram_color=00E5E5
     engine_color=00E5E5
     frametime_color=E500C6
+    fps_sampling_period=1000
   '';
 }
