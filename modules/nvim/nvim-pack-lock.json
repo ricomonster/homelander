@@ -27,7 +27,7 @@
       "src": "https://github.com/NMAC427/guess-indent.nvim"
     },
     "lensline.nvim": {
-      "rev": "93c14465c742511a645bb454db33ddd96f23bf76",
+      "rev": "4fafcfaeedac2d20bd5902213393982c4218bc3a",
       "src": "https://github.com/oribarilan/lensline.nvim",
       "version": "'v2.1.0'"
     },
