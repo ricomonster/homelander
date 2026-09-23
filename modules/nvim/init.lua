@@ -597,7 +597,7 @@ do
   end, { desc = 'Toggle file explorer' })
 
   vim.pack.add {
-    { src = gh 'oribarilan/lensline.nvim', tag = 'v2.1.0' },
+    { src = gh 'oribarilan/lensline.nvim', version = 'v2.1.0' },
   }
   require('lensline').setup()
 end
