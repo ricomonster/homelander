@@ -12,7 +12,7 @@
       # font-family = "JetBrainsMono Nerd Font";
       font-family = "SF Mono";
       # font-style = "SemiBold";
-      font-size = 8;
+      font-size = 9;
       # font-thicken = true;
       font-feature = ["calt=0" "zero"];
       alpha-blending = "linear";

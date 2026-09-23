@@ -34,6 +34,18 @@ hl.device({
 })
 
 hl.device({
+	name = "razer-razer-viper-ultimate-dongle",
+	sensitivity = -1,
+	natural_scroll = true,
+})
+
+hl.device({
+	name = "razer-razer-viper-ultimate-dongle-1",
+	sensitivity = -1,
+	natural_scroll = true,
+})
+
+hl.device({
 	name = "compx-pulsar-xlite-wireless",
 	sensitivity = -1,
 	natural_scroll = true,

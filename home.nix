@@ -22,6 +22,7 @@
     ./modules/mako.nix
     ./modules/mangohud.nix
     ./modules/mpv.nix
+    ./modules/nvim.nix
     ./modules/packages.nix
     ./modules/pipewire.nix
     ./modules/rofi.nix
