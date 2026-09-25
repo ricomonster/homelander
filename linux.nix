@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, apple-fonts, ... }: {
   home.username = "ricomonster";
   home.homeDirectory = "/home/ricomonster";
 
