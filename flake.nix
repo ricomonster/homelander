@@ -30,7 +30,7 @@ outputs = { nixpkgs, home-manager, apple-fonts, ... }:
       ricomonster = mkHome {
         system = "x86_64-linux"; theme = "default"; platformModule = ./linux.nix;
       };
-      "ricomonster@aarch64-darwin" = mkHome {
+      "silicon" = mkHome {
         system = "aarch64-darwin"; theme = "default"; platformModule = ./darwin.nix;
       };
       "ricomonster@x86_64-darwin" = mkHome {
