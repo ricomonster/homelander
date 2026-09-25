@@ -32,7 +32,7 @@ hl.window_rule({
 		class = "^(steam_app_.*)$",
 	},
 	monitor = monitors.primary,
-	workspace = "0",
+	workspace = "8",
 })
 
 hl.window_rule({

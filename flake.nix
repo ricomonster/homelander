@@ -14,27 +14,28 @@
     };
   };
 
-  outputs = {
-    nixpkgs,
-    home-manager,
-    apple-fonts,
-    ...
-  }: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages.${system};
-    mkHome = theme:
+outputs = { nixpkgs, home-manager, apple-fonts, ... }:
+  let
+    mkHome = { system, theme, platformModule }:
       home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = {
-          inherit theme;
-          apple-fonts = apple-fonts;
-        };
-        modules = [./home.nix];
+        pkgs = nixpkgs.legacyPackages.${system};
+        extraSpecialArgs = { inherit theme apple-fonts; };
+        modules = [ ./home.nix platformModule ];
       };
   in {
     homeConfigurations = {
-      "pewds" = mkHome "pewds";
-      "ricomonster" = mkHome "default";
+      pewds = mkHome {
+        system = "x86_64-linux"; theme = "pewds"; platformModule = ./linux.nix;
+      };
+      ricomonster = mkHome {
+        system = "x86_64-linux"; theme = "default"; platformModule = ./linux.nix;
+      };
+      "ricomonster@aarch64-darwin" = mkHome {
+        system = "aarch64-darwin"; theme = "default"; platformModule = ./darwin.nix;
+      };
+      "ricomonster@x86_64-darwin" = mkHome {
+        system = "x86_64-darwin"; theme = "default"; platformModule = ./darwin.nix;
+      };
     };
   };
 }

@@ -1,60 +1,40 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
-  home.username = "ricomonster";
-  home.homeDirectory = "/home/ricomonster";
-  home.stateVersion = "25.11";
-
-  home.sessionVariables = {
-    LC_NUMERIC = "en_US.UTF-8";
-  };
-
+{ pkgs, ... }: {
   imports = [
-    ./modules/btop.nix
+    ./modules/btop.nix 
     ./modules/fastfetch.nix
-    ./modules/ghostty.nix
+    ./modules/ghostty.nix 
     ./modules/git.nix
-    ./modules/herdr.nix
-    ./modules/hyprland.nix
-    ./modules/hyprpaper.nix
-    ./modules/mako.nix
-    ./modules/mangohud.nix
-    ./modules/mpv.nix
+    ./modules/herdr.nix 
     ./modules/nvim.nix
-    ./modules/packages.nix
-    ./modules/pipewire.nix
-    ./modules/rofi.nix
+    ./modules/packages.nix 
     ./modules/starship.nix
-    ./modules/tmux.nix
-    ./modules/waybar.nix
+    ./modules/tmux.nix 
     ./modules/zsh.nix
   ];
 
-  xdg.portal = {
-    enable = true;
-    config.common.default = "*";
-    extraPortals = [
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal-gtk
-    ];
-  };
+  home.stateVersion = "25.11";
+  home.sessionVariables.LC_NUMERIC = "en_US.UTF-8";
 
-  gtk = {
-    enable = true;
-    theme = {
-      name = "adw-gtk3-dark";
-      package = pkgs.adw-gtk3;
-    };
-    gtk4.theme = config.gtk.theme;
-  };
+  home.packages = with pkgs; [
+    bc
+    jq
+    lazygit
+    less
+    yarn
+    eza
 
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      "color-scheme" = "prefer-dark";
-    };
-  };
+    herdr
+
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    noto-fonts-color-emoji
+    nerd-fonts.jetbrains-mono
+    font-awesome
+    material-design-icons
+    dejavu_fonts
+    liberation_ttf
+  ];
 
   programs.home-manager.enable = true;
 }

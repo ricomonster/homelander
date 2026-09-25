@@ -872,6 +872,7 @@ do
   local ensure_installed = {
     'eslint-lsp',
     'gofumpt',
+    'gopls',
     'lua-language-server',
     'stylua',
     'svelte-language-server',

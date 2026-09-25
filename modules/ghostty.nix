@@ -9,8 +9,8 @@
 
     settings = {
       # Font
-      # font-family = "JetBrainsMono Nerd Font";
-      font-family = "SF Mono";
+      font-family = "JetBrainsMono Nerd Font";
+      # font-family = "SF Mono";
       # font-style = "SemiBold";
       font-size = 9;
       # font-thicken = true;
