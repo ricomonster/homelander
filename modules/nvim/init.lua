@@ -1136,6 +1136,9 @@ do
     -- Shows a signature help window while you type arguments for a function
     signature = { enabled = true },
   }
+
+  vim.pack.add { gh 'kdheepak/lazygit.nvim' }
+  vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', { desc = 'Open lazygit' })
 end
 
 -- ============================================================

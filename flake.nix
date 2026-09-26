@@ -27,13 +27,13 @@ outputs = { nixpkgs, home-manager, apple-fonts, ... }:
       pewds = mkHome {
         system = "x86_64-linux"; theme = "pewds"; platformModule = ./linux.nix;
       };
-      ricomonster = mkHome {
+      arch = mkHome {
         system = "x86_64-linux"; theme = "default"; platformModule = ./linux.nix;
       };
-      "silicon" = mkHome {
+      silicon = mkHome {
         system = "aarch64-darwin"; theme = "default"; platformModule = ./darwin.nix;
       };
-      "ricomonster@x86_64-darwin" = mkHome {
+      intel = mkHome {
         system = "x86_64-darwin"; theme = "default"; platformModule = ./darwin.nix;
       };
     };
