@@ -31,8 +31,8 @@
       export PATH=$PATH:$GOBIN
 
       # Tmuxifier
-      export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
-      eval "$(tmuxifier init -)"
+      # export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+      # eval "$(tmuxifier init -)"
 
       # fastfetch with pokemon-colorscripts, fallback to neofetch
       if command -v fastfetch > /dev/null 2>&1; then

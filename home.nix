@@ -21,6 +21,9 @@
     less
     yarn
     eza
+    bun
+    go
+    tree-sitter
 
     herdr
 

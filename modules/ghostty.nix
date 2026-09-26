@@ -12,7 +12,7 @@
       font-family = "JetBrainsMono Nerd Font";
       # font-family = "SF Mono";
       # font-style = "SemiBold";
-      font-size = 9;
+      font-size = 10;
       # font-thicken = true;
       font-feature = ["calt=0" "zero"];
       alpha-blending = "linear";
@@ -28,6 +28,7 @@
       window-padding-y = 6;
       window-decoration = "auto";
       background-opacity = 0.98;
+      macos-titlebar-style = "hidden";
 
       # Clipboard
       clipboard-read = "allow";
