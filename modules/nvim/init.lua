@@ -877,6 +877,7 @@ do
     'stylua',
     'svelte-language-server',
     'vtsls',
+    'biome',
   }
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -980,11 +981,12 @@ do
       --
       -- You can use 'stop_after_first' to run the first available formatter from the list
       css = { 'prettier' },
+      go = { 'gofumpt' },
       html = { 'prettier' },
       javascript = { 'biome', 'prettier', stop_after_first = true },
       javascriptreact = { 'prettier' },
       json = { 'biome', 'prettier', stop_after_first = true },
-      jsonc = { 'prettier' },
+      jsonc = { 'biome' },
       markdown = { 'mdformat', 'prettier', stop_after_first = true },
       scss = { 'prettier' },
       svelte = { 'prettier' },
@@ -1139,6 +1141,8 @@ do
 
   vim.pack.add { gh 'kdheepak/lazygit.nvim' }
   vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<cr>', { desc = 'Open lazygit' })
+
+  vim.pack.add { gh 'f-person/git-blame.nvim' }
 end
 
 -- ============================================================
