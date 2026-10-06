@@ -825,6 +825,8 @@ do
       on_attach = function(client) client.server_capabilities.documentFormattingProvider = false end,
     },
 
+    tailwindcss = {},
+
     eslint = {
       settings = {
         format = false,
@@ -878,6 +880,7 @@ do
     'svelte-language-server',
     'vtsls',
     'biome',
+    'tailwindcss-language-server',
   }
 
   require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -983,6 +986,7 @@ do
       css = { 'prettier' },
       go = { 'gofumpt' },
       html = { 'prettier' },
+      lua = { 'stylua' },
       javascript = { 'biome', 'prettier', stop_after_first = true },
       javascriptreact = { 'prettier' },
       json = { 'biome', 'prettier', stop_after_first = true },

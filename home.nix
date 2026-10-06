@@ -8,6 +8,7 @@
     ./modules/nvim.nix
     ./modules/starship.nix
     ./modules/tmux.nix 
+    ./modules/zoxide.nix
     ./modules/zsh.nix
   ];
 

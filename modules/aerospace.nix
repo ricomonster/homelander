@@ -100,7 +100,7 @@ let
         "run" = "layout floating";
       }
       {
-        "if" = { "app-id" = "app.zen-browser.zen"; };
+        "if" = { "app-id" = "com.apple.Safari"; };
         "run" = "move-node-to-workspace 1";
       }
       {
