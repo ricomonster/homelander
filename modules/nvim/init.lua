@@ -328,6 +328,24 @@ do
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
     callback = function() vim.hl.on_yank() end,
   })
+
+  -- Close active buffer like VSCode Cmd+W: buffer gone, window/splits stay
+  vim.keymap.set('n', '<leader>w', function()
+    local bufs = vim.tbl_filter(function(b) return vim.api.nvim_buf_is_valid(b) and vim.bo[b].buflisted end, vim.api.nvim_list_bufs())
+    if #bufs > 1 then
+      vim.cmd 'bd'
+    else
+      -- last buffer: blank it instead of quitting Neovim
+      vim.cmd 'enew'
+      vim.cmd 'bd#'
+    end
+  end, { desc = 'Close buffer, keep window' })
+
+  vim.keymap.set('n', '<leader>W', function()
+    for _, b in ipairs(vim.api.nvim_list_bufs()) do
+      if vim.bo[b].buflisted and vim.api.nvim_buf_is_valid(b) and b ~= vim.api.nvim_get_current_buf() then pcall(vim.cmd, 'bd ' .. b) end
+    end
+  end, { desc = 'Close all other buffers' })
 end
 
 -- ============================================================
@@ -788,31 +806,24 @@ do
     -- Special Lua Config, as recommended by neovim help docs
     lua_ls = {
       on_init = function(client)
-        client.server_capabilities.documentFormattingProvider = false -- Disable formatting (formatting is done by stylua)
-
-        if client.workspace_folders then
-          local path = client.workspace_folders[1].name
-          if path ~= vim.fn.stdpath 'config' and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc')) then return end
-        end
-
-        local current_settings = client.config.settings --[[@as lspconfig.settings.lua_ls]]
-        client.config.settings.Lua = vim.tbl_deep_extend('force', current_settings.Lua, {
+        -- Disable formatting (formatting is done by stylua)
+        client.server_capabilities.documentFormattingProvider = false
+      end,
+      settings = {
+        Lua = {
           runtime = {
             version = 'LuaJIT',
             path = { 'lua/?.lua', 'lua/?/init.lua' },
           },
           workspace = {
             checkThirdParty = false,
-            -- NOTE: this is a lot slower and will cause issues when working on your own configuration.
-            --  See https://github.com/neovim/nvim-lspconfig/issues/3189
+            -- Slow on big runtimes; see nvim-lspconfig#3189
             library = vim.api.nvim_get_runtime_file('', true),
           },
-        })
-      end,
-      ---@type lspconfig.settings.lua_ls
-      settings = {
-        Lua = {
-          format = { enable = false }, -- Disable formatting (formatting is done by stylua)
+          diagnostics = {
+            globals = { 'vim' },
+          },
+          format = { enable = false },
         },
       },
     },
@@ -965,6 +976,7 @@ do
         jsonc = true,
         lua = true,
         markdown = true,
+        nix = true,
         scss = true,
         yaml = true,
       }
@@ -986,16 +998,17 @@ do
       css = { 'prettier' },
       go = { 'gofumpt' },
       html = { 'prettier' },
-      lua = { 'stylua' },
       javascript = { 'biome', 'prettier', stop_after_first = true },
-      javascriptreact = { 'prettier' },
+      javascriptreact = { 'biome', 'prettier', stop_after_first = true },
       json = { 'biome', 'prettier', stop_after_first = true },
       jsonc = { 'biome' },
+      lua = { 'stylua' },
       markdown = { 'mdformat', 'prettier', stop_after_first = true },
+      nix = { 'nixfmt' },
       scss = { 'prettier' },
       svelte = { 'prettier' },
       typescript = { 'biome', 'prettier', stop_after_first = true },
-      typescriptreact = { 'prettier' },
+      typescriptreact = { 'biome', 'prettier', stop_after_first = true },
       yaml = { 'yamlfmt', 'prettier', stop_after_first = true },
     },
     formatters = {

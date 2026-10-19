@@ -1,13 +1,14 @@
 { pkgs, ... }: {
   imports = [
-    ./modules/btop.nix 
+    ./modules/btop.nix
     ./modules/fastfetch.nix
-    ./modules/ghostty.nix 
+    ./modules/ghostty.nix
     ./modules/git.nix
-    ./modules/herdr.nix 
+    ./modules/herdr.nix
+    ./modules/mpv.nix
     ./modules/nvim.nix
     ./modules/starship.nix
-    ./modules/tmux.nix 
+    ./modules/tmux.nix
     ./modules/zoxide.nix
     ./modules/zsh.nix
   ];

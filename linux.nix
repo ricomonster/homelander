@@ -7,7 +7,6 @@
     ./modules/hyprpaper.nix
     ./modules/mako.nix 
     ./modules/mangohud.nix
-    ./modules/mpv.nix 
     ./modules/pipewire.nix
     ./modules/rofi.nix 
     ./modules/waybar.nix
