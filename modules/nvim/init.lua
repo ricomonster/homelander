@@ -509,8 +509,9 @@ do
   ---@diagnostic disable-next-line: missing-fields
   require('tokyonight').setup {
     styles = {
-      comments = { italic = false }, -- Disable italics in comments
+      comments = { italic = false },
     },
+    transparent = true,
   }
 
   -- Load the colorscheme here.

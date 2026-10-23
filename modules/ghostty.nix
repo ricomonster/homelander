@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   programs.ghostty = {
     enable = true;
     package = null; # managed by pacman
@@ -14,7 +14,10 @@
       # font-style = "SemiBold";
       # font-size = 10;
       font-thicken = true;
-      font-feature = ["calt=0" "zero"];
+      font-feature = [
+        "calt=0"
+        "zero"
+      ];
       # alpha-blending = "linear";
       # adjust-cell-height = "20%";
 
