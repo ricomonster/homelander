@@ -58,6 +58,7 @@ let
           "alt-7" = "workspace 7";
           "alt-8" = "workspace 8";
           "alt-9" = "workspace 9";
+          "alt-0" = "workspace 9";
 
           "alt-shift-1" = "move-node-to-workspace 1";
           "alt-shift-2" = "move-node-to-workspace 2";
@@ -68,6 +69,7 @@ let
           "alt-shift-7" = "move-node-to-workspace 7";
           "alt-shift-8" = "move-node-to-workspace 8";
           "alt-shift-9" = "move-node-to-workspace 9";
+          "alt-shift-0" = "move-node-to-workspace 0";
 
           "alt-tab" = "workspace-back-and-forth";
           "alt-shift-tab" = "move-workspace-to-monitor --wrap-around next";
@@ -78,15 +80,39 @@ let
 
       "service" = {
         "binding" = {
-          "esc" = [ "reload-config" "mode main" ];
-          "r" = [ "flatten-workspace-tree" "mode main" ];
-          "f" = [ "layout floating tiling" "mode main" ];
-          "backspace" = [ "close-all-windows-but-current" "mode main" ];
+          "esc" = [
+            "reload-config"
+            "mode main"
+          ];
+          "r" = [
+            "flatten-workspace-tree"
+            "mode main"
+          ];
+          "f" = [
+            "layout floating tiling"
+            "mode main"
+          ];
+          "backspace" = [
+            "close-all-windows-but-current"
+            "mode main"
+          ];
 
-          "alt-shift-h" = [ "join-with left" "mode main" ];
-          "alt-shift-j" = [ "join-with down" "mode main" ];
-          "alt-shift-k" = [ "join-with up" "mode main" ];
-          "alt-shift-l" = [ "join-with right" "mode main" ];
+          "alt-shift-h" = [
+            "join-with left"
+            "mode main"
+          ];
+          "alt-shift-j" = [
+            "join-with down"
+            "mode main"
+          ];
+          "alt-shift-k" = [
+            "join-with up"
+            "mode main"
+          ];
+          "alt-shift-l" = [
+            "join-with right"
+            "mode main"
+          ];
         };
       };
     };
@@ -100,43 +126,63 @@ let
         "run" = "layout floating";
       }
       {
-        "if" = { "app-id" = "com.apple.Safari"; };
+        "if" = {
+          "app-id" = "com.apple.Safari";
+        };
         "run" = "move-node-to-workspace 1";
       }
       {
-        "if" = { "app-id" = "org.mozilla.firefoxdeveloperedition"; };
+        "if" = {
+          "app-id" = "org.mozilla.firefoxdeveloperedition";
+        };
         "run" = "move-node-to-workspace 2";
       }
       {
-        "if" = { "app-id" = "com.postmanlabs.mac"; };
+        "if" = {
+          "app-id" = "com.postmanlabs.mac";
+        };
         "run" = "move-node-to-workspace 5";
       }
       {
-        "if" = { "app-id" = "com.TickTick.task.mac"; };
+        "if" = {
+          "app-id" = "com.TickTick.task.mac";
+        };
         "run" = "move-node-to-workspace 3";
       }
       {
-        "if" = { "app-id" = "md.obsidian"; };
+        "if" = {
+          "app-id" = "md.obsidian";
+        };
         "run" = "move-node-to-workspace 3";
       }
       {
-        "if" = { "app-id" = "com.spotify.client"; };
+        "if" = {
+          "app-id" = "com.spotify.client";
+        };
         "run" = "move-node-to-workspace 9";
       }
       {
-        "if" = { "app-id" = "com.mitchellh.ghostty"; };
+        "if" = {
+          "app-id" = "com.mitchellh.ghostty";
+        };
         "run" = "move-node-to-workspace 4";
       }
       {
-        "if" = { "app-id" = "com.apple.systempreferences"; };
+        "if" = {
+          "app-id" = "com.apple.systempreferences";
+        };
         "run" = "layout floating";
       }
       {
-        "if" = { "app-id" = "com.apple.ScreenContinuity"; };
+        "if" = {
+          "app-id" = "com.apple.ScreenContinuity";
+        };
         "run" = "layout floating";
       }
       {
-        "if" = { "app-id" = "com.apple.FollowUpUI"; };
+        "if" = {
+          "app-id" = "com.apple.FollowUpUI";
+        };
         "run" = "layout floating";
       }
       {
@@ -146,7 +192,8 @@ let
     ];
   };
 in
-  {
+{
   xdg.configFile."aerospace/aerospace.toml".source =
-    (pkgs.formats.toml { }).generate "aerospace.toml" settings;
+    (pkgs.formats.toml { }).generate "aerospace.toml"
+      settings;
 }
